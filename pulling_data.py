@@ -80,14 +80,15 @@ if __name__ == '__main__':
     stats_table = pd.DataFrame(columns=stats_columns, index=range(0, 2))
 
     i = 0
-    for player in all_active_players[0:5]:
+    for player in all_active_players:
         print player
         url = name_to_url(player)
         row = populate_stats(url)
         stats_table.ix[i, stats_columns] = row
         i += 1
 
-    stats_table.insert(0, 'Player', all_active_players[0:5])
-
+    stats_table.insert(0, 'Player', all_active_players)
+    stats_table = stats_table[stats_table['Games'].map(len) < 6]
+    stats_table.reset_index(drop=True, inplace=True)
     stats_table.to_csv('output_stats.csv', sep=',')
     print stats_table

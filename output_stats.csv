@@ -1,16 +1,5 @@
 ,Player,Games,Points,Total Rebounds,Assists,Field Goal Percentage,3-Point Field Goal Percentage,Free Throw Percentage,Effective Field Goal Percentage,Efficiency Rating,Win Shares
 0,Alex Abrines,68,6.0,1.3,0.6,39.3,38.1,89.8,53.1,10.1,2.1
 1,Quincy Acy,257,4.7,3.5,0.6,48.2,36.6,75.0,52.5,12.5,7.8
-2,Jordan Adams,"4 class=""poptip"" data-tip=""Games"">G</h4><p></p>
-<p>32","4 class=""poptip"" data-tip=""Points"">PTS</h4><p></p>
-<p>3.2","4 class=""poptip"" data-tip=""Total Rebounds"">TRB</h4><p></p>
-<p>0.9","4 class=""poptip"" data-tip=""Assists"">AST</h4><p></p>
-<p>0.6","4 class=""poptip"" data-tip=""Field Goal Percentage"">FG%</h4><p></p>
-<p>40.2","4 class=""poptip"" data-tip=""3-Point Field Goal Percentage"">FG3%</h4><p></p>
-<p>38.5","4 class=""poptip"" data-tip=""Free Throw Percentage"">FT%</h4><p></p>
-<p>60.7","4 class=""poptip"" data-tip=""&lt;strong&gt;Effective Field Goal Percentage&lt;/strong&gt;&lt;br&gt;This statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal."">eFG%</h4><p></p>
-<p>45.7","4 class=""poptip"" data-tip=""&lt;b&gt;Player Efficiency Rating&lt;/b&gt;&lt;br&gt;A measure of per-minute production standardized such that the league average is 15."">PER</h4><p></p>
-<p>13.1","4 class=""poptip"" data-tip=""&lt;b&gt;Win Shares&lt;/b&gt;&lt;br&gt;An estimate of the number of wins contributed by a player."">WS</h4><p></p>
-<p>0.4"
-3,Steven Adams,311,7.5,6.4,0.8,56.8,0.0,57.1,56.8,14.8,19.9
-4,Arron Afflalo,709,11.3,3.0,1.9,45.1,38.6,82.5,51.5,12.1,33.3
+2,Steven Adams,311,7.5,6.4,0.8,56.8,0.0,57.1,56.8,14.8,19.9
+3,Arron Afflalo,709,11.3,3.0,1.9,45.1,38.6,82.5,51.5,12.1,33.3
