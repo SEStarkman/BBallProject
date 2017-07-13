@@ -34,14 +34,13 @@ def populate_stats(url):
             res2 = str(stats_out[i])[start2:end2]
             stats_row.append(res2)
 
-        print stats_row
         return stats_row
 
     except AttributeError:
         print 'Missing Data'
 
 
-def parse_csv(filename):
+def parse_players_csv(filename):
     playerlist = []
     with open(filename, 'rb') as csvfile:
         players = csv.reader(csvfile, delimiter=',')
@@ -61,6 +60,19 @@ def parse_csv(filename):
     # print urls[0:5]
     return playerlist
 
+
+def clean_stats_table(stats_table):
+    stats_table.insert(0, 'Player', all_active_players[1:10])
+    try:
+        for col in stats_columns:
+            stats_table = stats_table[stats_table[col].map(len) < 6]
+            stats_table.reset_index(drop=True, inplace=True)
+
+    except TypeError:
+        print 'NoneType'
+
+    return stats_table
+
 if __name__ == '__main__':
     stats_columns = [
                      'Games',
@@ -74,21 +86,18 @@ if __name__ == '__main__':
                      'Efficiency Rating',
                      'Win Shares']
 
-    # all_active_players = ['Paul George', 'James Harden', 'Lebron James', 'Victor Oladipo']
-    all_active_players = parse_csv('playernames.csv')[0]
-    print all_active_players
-    stats_table = pd.DataFrame(columns=stats_columns, index=range(0, 2))
+    all_active_players = parse_players_csv('playernames.csv')[0]
+    stats_table = pd.DataFrame(columns=stats_columns, index=range(1))
 
     i = 0
-    for player in all_active_players:
+    for player in all_active_players[1:10]:
         print player
         url = name_to_url(player)
         row = populate_stats(url)
+        # print row
         stats_table.ix[i, stats_columns] = row
         i += 1
 
-    stats_table.insert(0, 'Player', all_active_players)
-    stats_table = stats_table[stats_table['Games'].map(len) < 6]
-    stats_table.reset_index(drop=True, inplace=True)
+    stats_table = clean_stats_table(stats_table)
     stats_table.to_csv('output_stats.csv', sep=',')
     print stats_table
